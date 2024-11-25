@@ -31,7 +31,7 @@ const Header = () => {
     ];
     return (
         <>
-            <Navbar fluid className='bg-white shadow-md  !px-6'>
+            <Navbar fluid className='bg-white shadow-md  !px-6 fixed top-0 left-0 right-0'>
                 <Navbar.Brand as={Link} href="/">
                     <Image src={pic} className="mr-3 h-12 w-12 rounded-full border" alt="logo" />
                     <h1 className="font-semibold text-xl cursor-pointer dark:text-white">
