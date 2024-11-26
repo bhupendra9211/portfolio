@@ -22,7 +22,7 @@ const Header = () => {
         },
         {
             id: 4,
-            text: "Experiance",
+            text: "Experience",
         },
         {
             id: 5,
@@ -32,8 +32,8 @@ const Header = () => {
     return (
         <>
             <Navbar fluid className='bg-white shadow-md  !px-6 fixed top-0 left-0 right-0'>
-                <Navbar.Brand as={Link} href="/">
-                    <Image src={pic} className="mr-3 h-12 w-12 rounded-full border" alt="logo" />
+                <Navbar.Brand as={Link} to="Home" smooth={true} duration={500} offset={-70}>
+                    <Image src={pic} className="mr-3 h-12 w-12 rounded-full border cursor-pointer" alt="logo" />
                     <h1 className="font-semibold text-xl cursor-pointer dark:text-white">
                         Bhupendr<span className="text-red-600 text-2xl dark:text-red">A</span>
                         <p className="text-sm dark:text-white">Web Developer</p>
