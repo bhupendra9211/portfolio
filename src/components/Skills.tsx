@@ -26,86 +26,86 @@ function Skills() {
   const cardItems: CardItem[] = [
     {
       id: 1,
-      logo: <FaHtml5 className="text-[150px] text-orange-500" />, // HTML: orange
+      logo: <FaHtml5 className="text-[150px] text-orange-500 md:w-[150px] md:h-[150px] w-[90px] h-[90px]" />,
       name: "HTML",
     },
     {
       id: 2,
-      logo: <FaCss3Alt className="text-[150px] text-blue-500" />, // CSS: blue
+      logo: <FaCss3Alt className="text-[150px] text-blue-500 md:w-[150px] md:h-[150px] w-[90px] h-[90px]" />,
       name: "CSS",
     },
     {
       id: 3,
-      logo: <TbBrandJavascript className="text-[150px] text-yellow-400" />, // JavaScript: yellow
-      name: "JAVASCRIPT",
+      logo: <TbBrandJavascript className="text-[150px] text-yellow-400 md:w-[150px] md:h-[150px] w-[90px] h-[90px]" />,
+      name: "JAVA SCRIPT",
     },
     {
       id: 4,
-      logo: <AiOutlineRuby className="text-[150px] text-red-600" />, // Ruby: red
+      logo: <AiOutlineRuby className="text-[150px] text-red-600" />, 
       name: "RUBY",
     },
     {
       id: 5,
-      logo: <SiRubyonrails className="text-[150px] text-red-700" />, // Ruby on Rails: deep red
+      logo: <SiRubyonrails className="text-[150px] text-red-700" />,
       name: "RAILS",
     },
     {
       id: 6,
-      logo: <FaReact className="text-[150px] text-blue-300" />, // React: light blue
+      logo: <FaReact className="text-[150px] text-blue-300" />, 
       name: "REACT",
     },
     {
       id: 7,
-      logo: <FaPython className="text-[150px] text-blue-400" />, // Python: blue and yellow
+      logo: <FaPython className="text-[150px] text-blue-400" />, 
       name: "PYTHON",
     },
     {
       id: 8,
-      logo: <SiMysql className="text-[150px] text-blue-600" />, // MySQL: blue
+      logo: <SiMysql className="text-[150px] text-blue-600" />,
       name: "MySQL",
     },
     {
       id: 9,
-      logo: <VscGithubInverted className="text-[150px] text-black" />, // GitHub: black
+      logo: <VscGithubInverted className="text-[150px] text-black" />, 
       name: "GIT & GITHUB",
     },
     {
       id: 10,
-      logo: <SiMicrosoftword className="text-[150px] text-blue-500" />, // MS Word: blue
+      logo: <SiMicrosoftword className="text-[150px] text-blue-500" />, 
       name: "MS WORD",
     },
     {
       id: 11,
-      logo: <RiFileExcel2Line className="text-[150px] text-green-500" />, // Excel: green
+      logo: <RiFileExcel2Line className="text-[150px] text-green-500" />, 
       name: "EXCEL",
     },
     {
       id: 12,
-      logo: <FaRegFilePowerpoint className="text-[150px] text-orange-600" />, // PowerPoint: orange
+      logo: <FaRegFilePowerpoint className="text-[150px] text-orange-600" />, 
       name: "POWERPOINT",
     },
   ];
   return (
     <div
       id="Skills"
-      className="flex items-center h-screen container mx-auto "
+className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8"
     >
       <div>
-        <h1 className="text-3xl font-bold mb-5">Skills</h1>
-        <p className="  ">
+        <h1 className="text-3xl font-bold mb-5 text-center">Skills</h1>
+        <p className="text-center">
           I've more than 1 years of Experience in below technologies.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-7 my-3">
+        <div className="grid grid-cols-2 md:grid-cols-8 gap-7 my-6">
           {cardItems.map(({ id, logo, name }) => (
             <div
               className=" flex flex-col items-center justify-center border-[2px] rounded-full md:w-[230px] md:h-[230px] shadow-md p-1 cursor-pointer hover:scale-110 duration-300"
               key={id}
             >
-              <div className="w-[150px] h-[150px] flex items-center justify-center">
+              <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px] flex items-center justify-center">
                   {logo} 
               </div>
               <div>
-                <div className="">{name}</div>
+                <div>{name}</div>
               </div>
             </div>
           ))}

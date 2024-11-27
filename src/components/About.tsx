@@ -3,12 +3,12 @@ import React from 'react'
 const About = () => {
   return (
     <div
-    id="About"
-      className="flex justify-center items-center h-screen container mx-auto"
+      id="About"
+      className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8"
     >
       <div>
-        <h1 className="text-3xl font-bold mb-5">About</h1>
-        <p>
+        <h1 className="text-3xl font-bold mb-5 text-center">About</h1>
+        <p className='text-center'>
           Hello, I'm Bhupendra, a passionate Web developer with a keen eye for MERN
           Stack . With a background in IT, I strive to create impactful and
           visually stunning Software solutions that leave a lasting impression.
