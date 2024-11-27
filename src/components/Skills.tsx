@@ -95,21 +95,21 @@ className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8"
         <p className="text-center">
           I've more than 1 years of Experience in below technologies.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-8 gap-7 my-6">
-          {cardItems.map(({ id, logo, name }) => (
-            <div
-              className=" flex flex-col items-center justify-center border-[2px] rounded-full md:w-[230px] md:h-[230px] shadow-md p-1 cursor-pointer hover:scale-110 duration-300"
-              key={id}
-            >
-              <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px] flex items-center justify-center">
-                  {logo} 
-              </div>
-              <div>
-                <div>{name}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-7 my-6">
+  {cardItems.map(({ id, logo, name }) => (
+    <div
+      className="flex flex-col items-center justify-center border-[2px] rounded-full md:w-[230px] md:h-[230px] shadow-md p-1 cursor-pointer hover:scale-110 duration-300"
+      key={id}
+    >
+      <div className="md:w-[150px] md:h-[150px] w-[100px] h-[100px] flex items-center justify-center">
+        {logo} 
+      </div>
+      <div className="mt-2">
+        <div className="font-bold">{name}</div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ function Hero() {
   return (
     <div
       id="Home"
-      className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8 "
+      className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8 mx-24"
     >
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/2 mt-12 md:mt-24 space-y-4 order-2 md:order-1">

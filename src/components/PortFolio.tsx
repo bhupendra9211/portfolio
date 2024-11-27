@@ -51,7 +51,7 @@ function PortFolio() {
         <span className="underline font-semibold text-center block mb-5">
           Featured Projects
         </span>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {cardItem.map(({ id, logo, name }) => (
             <div
               className="w-full border-2 rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 duration-300"
