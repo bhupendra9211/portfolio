@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <Flowbite>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased dark:text-white dark:bg-gray-700` }
+          className={`${geistSans.variable} ${geistMono.variable} antialiased dark:text-white dark:bg-gray-700 ` }
         >
           {children}
         </body>

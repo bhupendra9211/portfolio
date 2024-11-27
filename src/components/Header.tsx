@@ -23,7 +23,7 @@ const Header = () => {
         },
         {
             id: 4,
-            text: "Experience",
+            text: "Skills",
         },
     ];
     return (

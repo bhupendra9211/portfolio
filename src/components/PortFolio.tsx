@@ -42,7 +42,7 @@ function PortFolio() {
   return (
     <div
       id="Portfolio"
-      className="flex items-center h-screen container mx-auto "
+      className="flex items-center h-screen container mx-auto"
     >
       <div>
         <h1 className="text-3xl font-bold mb-5">PortFolio</h1>
@@ -56,7 +56,7 @@ function PortFolio() {
               <Image src={logo} className="w-[120px] h-[120px] p-1 rounded-full border-[2px]" alt="logo" />
               <div>
                 <div className="px-2 font-bold text-xl mb-2">{name}</div>
-                <p className="px-2 text-gray-700">
+                <p className="px-2 text-gray-700 dark:text-white">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
               </div>
