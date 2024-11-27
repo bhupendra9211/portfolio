@@ -93,7 +93,7 @@ className="flex justify-center items-center min-h-screen px-4 sm:px-6 lg:px-8"
       <div>
         <h1 className="text-3xl font-bold mb-5 text-center">Skills</h1>
         <p className="text-center">
-          I've more than 1 years of Experience in below technologies.
+          Ive more than 1 years of Experience in below technologies.
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-7 my-6">
   {cardItems.map(({ id, logo, name }) => (

@@ -1,5 +1,4 @@
 import About from "@/components/About";
-import Contact from "@/components/Contact";
 import Experiance from "@/components/Skills";
 import Footerd from "@/components/Footerd";
 import Header from "@/components/Header";
