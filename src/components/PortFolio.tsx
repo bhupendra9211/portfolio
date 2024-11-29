@@ -1,44 +1,36 @@
 import React from "react";
 import Image from "next/image";
-import java from "../../public/icons/java.png";
+
+import { SiRubyonrails } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
 import python from "../../public/icons/python.webp";
-import mongoDB from "../../public/icons/mongodb.jpg";
-import express from "../../public/icons/express.png";
 import reactjs from "../../public/icons/reactjs.png";
-import nodejs from "../../public/icons/node.png";
+
+type CardItem = {
+  id: number;
+  logo: JSX.Element; 
+  name: string;
+};
 
 function PortFolio() {
-  const cardItem = [
+  const cardItems: CardItem[] =  [
     {
       id: 1,
-      logo: mongoDB,
-      name: "MongoDB",
+      logo: <SiRubyonrails className="text-[150px] text-red-700" />,
+      name: "Ruby On Rails",
     },
     {
       id: 2,
-      logo: express,
-      name: "Express",
+      logo: <FaReact className="text-[130px] text-blue-500" />,
+      name: "React",
     },
     {
       id: 3,
-      logo: reactjs,
-      name: "ReactJS",
+      logo: <SiTypescript className="text-[130px] text-blue-500" />,
+      name: "Type Script",
     },
-    {
-      id: 4,
-      logo: nodejs,
-      name: "NodeJS",
-    },
-    {
-      id: 5,
-      logo: python,
-      name: "Python",
-    },
-    {
-      id: 6,
-      logo: java,
-      name: "Java",
-    },
+
   ];
 
   return (
@@ -52,28 +44,23 @@ function PortFolio() {
           Featured Projects
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {cardItem.map(({ id, logo, name }) => (
+          {cardItems.map(({ id, logo, name }) => (
             <div
               className="w-full border-2 rounded-lg shadow-lg p-4 cursor-pointer hover:scale-105 duration-300"
               key={id}
             >
-              <Image
-                src={logo}
-                className="w-[120px] h-[120px] mx-auto p-2 rounded-full border-2"
-                alt={name}
-              />
+              <div className="w-[120px] h-[120px] mx-auto p-2 ">
+                {logo}
+              </div>
               <div className="text-center mt-4">
                 <div className="font-bold text-xl mb-2">{name}</div>
                 <p className="text-sm text-gray-700 dark:text-white">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  All the projcet are available into my GitHub. Please visit and review it.
                 </p>
               </div>
               <div className="mt-4 space-x-3 text-center">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded">
-                  Video
-                </button>
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
-                  Source Code
+                  <a href="https://github.com/bhupendra9211?tab=repositories" target="_blank">Source code</a>
                 </button>
               </div>
             </div>

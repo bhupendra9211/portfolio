@@ -8,10 +8,12 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaTelegram } from "react-icons/fa6";
 
-import { SiMongodb } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
+
+
+import { SiRubyonrails } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa6";
+import { SiMysql } from "react-icons/si";
+import { SiCyberdefenders } from "react-icons/si";
 
 import { ReactTyped } from "react-typed";
 
@@ -23,25 +25,23 @@ function Hero() {
     >
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/2 mt-12 md:mt-24 space-y-4 order-2 md:order-1">
-          <span className="text-xl">Welcome To My Feed</span>
+          <span className="text-xl font-semibold">Welcome To My Feed</span>
           <div className="flex space-x-1 text-2xl md:text-4xl">
-            <h1>Hello, Im a</h1>
-            {/* <span >Developer</span> */}
+            <h1>Hello, I'm a</h1>
             <ReactTyped
               className="text-red-700 font-bold"
-              strings={["Developer", "Programmer", "Coder"]}
+              strings={["Web Developer", "Programmer", "Cybersecurity Enthusiast"]}
               typeSpeed={40}
               backSpeed={50}
               loop={true}
             />
           </div>
           <br />
-          <p className="text-sm md:text-md text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            recusandae consequatur. Accusamus sint libero eligendi laborum fuga
-            repudiandae? Asperiores tempore eos animi dolores corrupti! Sint quos,
-            mollitia architecto aliquam nesciunt, optio cum delectus sit voluptatum
-            aut ratione quaerat veniam aperiam!
+          <p className="text-md  text-justify">
+            Hi, I'm Bhupendra Sah, a dedicated software developer and aspiring cybersecurity professional from Nepal. 
+            With hands-on experience in Ruby on Rails, React, and Next.js, I specialize in building efficient, scalable web applications.
+            I am passionate about exploring the exciting field of cybersecurity while being eager to learn and adapt to any emerging technology.
+            My journey reflects a strong commitment to continuous improvement and innovation in the tech landscape.
           </p>
           <br />
           {/* social media icons */}
@@ -50,23 +50,18 @@ function Hero() {
               <h1 className="font-bold text-center">Available on</h1>
               <ul className="flex space-x-5 justify-center">
                 <li>
-                  <a href="https://www.facebook.com/" target="_blank">
-                    <FaSquareFacebook className="text-2xl cursor-pointer" />
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                    <FaSquareFacebook className="text-2xl cursor-pointer hover:scale-110 duration-200" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/" target="_blank">
-                    <FaLinkedin className="text-2xl cursor-pointer" />
+                  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="text-2xl cursor-pointer hover:scale-110 duration-200" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/" target="_blank">
-                    <IoLogoYoutube className="text-2xl cursor-pointer" />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://t.me/" target="_blank">
-                    <FaTelegram className="text-2xl cursor-pointer" />
+                  <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                    <IoLogoYoutube className="text-2xl cursor-pointer hover:scale-110 duration-200" />
                   </a>
                 </li>
               </ul>
@@ -74,10 +69,10 @@ function Hero() {
             <div className="space-y-2">
               <h1 className="font-bold text-center">Currently working on</h1>
               <div className="flex space-x-5 justify-center">
-                <SiMongodb className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                <SiExpress className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
+                <SiRubyonrails className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
                 <FaReact className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                <FaNodeJs className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
+                <SiMysql className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
+                <SiCyberdefenders className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
               </div>
             </div>
           </div>
@@ -88,7 +83,7 @@ function Hero() {
               <div className="w-full h-full flex-shrink-0">
                 <Image
                   src={pic}
-                  alt="profile 1"
+                  alt="Profile Image"
                   width={450}
                   height={450}
                   className="rounded-full"
@@ -97,7 +92,7 @@ function Hero() {
               <div className="w-full h-full flex-shrink-0">
                 <Image
                   src={pic}
-                  alt="profile 2"
+                  alt="Profile Image 2"
                   width={450}
                   height={450}
                   className="rounded-full"
@@ -106,7 +101,7 @@ function Hero() {
               <div className="w-full h-full flex-shrink-0">
                 <Image
                   src={pic}
-                  alt="profile 3"
+                  alt="Profile Image 3"
                   width={450}
                   height={450}
                   className="rounded-full"
@@ -115,7 +110,7 @@ function Hero() {
               <div className="w-full h-full flex-shrink-0">
                 <Image
                   src={pic}
-                  alt="profile 4"
+                  alt="Profile Image 4"
                   width={450}
                   height={450}
                   className="rounded-full"
