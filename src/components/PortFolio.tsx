@@ -1,11 +1,7 @@
 import React from "react";
-import Image from "next/image";
-
 import { SiRubyonrails } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
-import python from "../../public/icons/python.webp";
-import reactjs from "../../public/icons/reactjs.png";
 
 type CardItem = {
   id: number;

@@ -8,6 +8,12 @@ import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 
+interface ContactFormData {
+    email: string;
+    subject: string;
+    message: string;
+  }
+
 
 function Contact() {
     const {
@@ -15,13 +21,13 @@ function Contact() {
         handleSubmit,
     
         formState: { errors },
-      } = useForm();
+      } = useForm<ContactFormData>();
 
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClose = () => setIsOpen(false);
 
-    const onSubmit = async (data:any) => {
+    const onSubmit = async (data:ContactFormData) => {
         handleClose();
         const userInfo = {
           email: data.email,

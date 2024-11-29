@@ -6,9 +6,6 @@ import pic from "../../public/icons/profile.png";
 import { FaSquareFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
-import { FaTelegram } from "react-icons/fa6";
-
-
 
 import { SiRubyonrails } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
@@ -27,7 +24,7 @@ function Hero() {
         <div className="md:w-1/2 mt-12 md:mt-24 space-y-4 order-2 md:order-1">
           <span className="text-xl font-semibold">Welcome To My Feed</span>
           <div className="flex space-x-1 text-2xl md:text-4xl">
-            <h1>Hello, I'm a</h1>
+            <h1>Hello, I am a</h1>
             <ReactTyped
               className="text-red-700 font-bold"
               strings={["Web Developer", "Programmer", "Cybersecurity Enthusiast"]}
@@ -38,7 +35,7 @@ function Hero() {
           </div>
           <br />
           <p className="text-md  text-justify">
-            Hi, I'm Bhupendra Sah, a dedicated software developer and aspiring cybersecurity professional from Nepal. 
+            Hi, I am Bhupendra Sah, a dedicated software developer and aspiring cybersecurity professional from Nepal. 
             With hands-on experience in Ruby on Rails, React, and Next.js, I specialize in building efficient, scalable web applications.
             I am passionate about exploring the exciting field of cybersecurity while being eager to learn and adapt to any emerging technology.
             My journey reflects a strong commitment to continuous improvement and innovation in the tech landscape.
