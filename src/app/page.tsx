@@ -4,16 +4,20 @@ import Footerd from "@/components/Footerd";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PortFolio from "@/components/PortFolio";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
     <>
-    <Header />
-    <Hero />
-    <About />
-    <PortFolio />
-    <Experiance />
-    <Footerd />
+    <Toaster />
+      <div>
+        <Header />
+        <Hero />
+        <About />
+        <PortFolio />
+        <Experiance />
+        <Footerd />
+      </div>
     </>
   );
 }
