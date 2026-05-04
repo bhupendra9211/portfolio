@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Link } from "react-scroll";
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from "react-icons/fa";
+import { FaDownload, FaArrowRight } from "react-icons/fa";
 
 function Hero() {
   return (

@@ -43,7 +43,7 @@ function About() {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              I'm Bhupendra Kumar Sah, a Full Stack Developer from Bhaktapur, Nepal, with a B.Sc. in
+              I am Bhupendra Kumar Sah, a Full Stack Developer from Bhaktapur, Nepal, with a B.Sc. in
               Computational Mathematics from Kathmandu University. I specialize in building
               production-grade Odoo 18 ERP solutions and modern web applications.
             </p>
@@ -54,7 +54,7 @@ function About() {
             </p>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               Beyond Odoo, I bring strong full-stack skills in Ruby on Rails, React, and PHP/Laravel.
-              I'm a cybersecurity enthusiast who loves tackling challenges beyond the expected, and I
+              I am a cybersecurity enthusiast who loves tackling challenges beyond the expected, and I
               approach every project with a commitment to clean code and scalable architecture.
             </p>
             <div className="flex gap-4 flex-wrap">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Button, Drawer, Label, Textarea, TextInput } from "flowbite-react";
 import { HiEnvelope } from "react-icons/hi2";
 import { HiMail, HiPhone } from "react-icons/hi";

@@ -30,7 +30,7 @@ function Projects() {
     },
     {
       name: "Medium Clone",
-      description: "Full-stack blogging platform cloning Medium's core features for writing and publishing.",
+      description: "Full-stack blogging platform cloning Medium&apos;s core features for writing and publishing.",
       github: "https://github.com/bhupendra9211/MyBlog",
       tags: ["Rails", "React"],
     },
@@ -114,7 +114,7 @@ function Projects() {
               Professional Work
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Websites I've <span className="text-gray-500 dark:text-gray-400 italic">Built</span>
+              Websites I&apos;ve <span className="text-gray-500 dark:text-gray-400 italic">Built</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
             <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
