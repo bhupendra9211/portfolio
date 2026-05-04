@@ -1,51 +1,27 @@
 "use client";
-
 import React from "react";
-import { Footer } from "flowbite-react";
-import { Link } from "react-scroll";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 
-function Footerd() {
-  const footerLinks = [
-    { id: 1, text: "Home", to: "Home" },
-    { id: 2, text: "About", to: "About" },
-    { id: 3, text: "Portfolio", to: "Portfolio" },
-    { id: 4, text: "Skills", to: "Skills" },
-    { id: 5, text: "Experience", to: "Experience" },
-  ];
+function Footer() {
+  const currentYear = new Date().getFullYear();
 
   return (
-    <Footer container className="bg-gray-900 dark:bg-gray-950 rounded-none">
-      <div className="w-full">
-        <div className="flex flex-wrap justify-between items-center gap-4 pb-6 border-b border-gray-700">
-          <Footer.Brand
-            href="#Home"
-            src="/icons/photo.avif"
-            alt="Bhupendra Logo"
-            name="Bhupendra Shah"
-            className="text-white"
-          />
-          <div className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map(({ id, text, to }) => (
-              <Link
-                key={id}
-                to={to}
-                smooth={true}
-                duration={500}
-                offset={-70}
-                activeClass="active"
-                className="text-gray-400 hover:text-white transition-colors duration-200 cursor-pointer text-sm"
-              >
-                {text}
-              </Link>
-            ))}
+    <footer className="bg-gray-900 dark:bg-gray-950 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-gray-800">
+          <div>
+            <h2 className="text-2xl font-bold text-white">
+              Bhupendra<span className="text-blue-500">.</span>
+            </h2>
+            <p className="text-gray-500 text-sm mt-1">Full Stack Developer & Odoo Specialist</p>
           </div>
+
           <div className="flex gap-4">
             <a
               href="https://github.com/bhupendra9211"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors duration-200"
+              className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
             >
               <FaGithub size={20} />
             </a>
@@ -53,34 +29,38 @@ function Footerd() {
               href="https://www.linkedin.com/in/bhupendra-kumar-sah-038b49217"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+              className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
             >
               <FaLinkedin size={20} />
+            </a>
+            <a
+              href="mailto:shahbhupendra9211@gmail.com"
+              className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
+              <FaEnvelope size={20} />
             </a>
             <a
               href="https://bhupendrasah.com.np/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-400 transition-colors duration-200"
+              className="p-2 rounded-lg bg-gray-800 text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
             >
-              <FaEnvelope size={20} />
+              <FaGlobe size={20} />
             </a>
           </div>
         </div>
-        <div className="flex flex-wrap justify-between items-center gap-4 pt-6">
-          <Footer.Copyright
-            href="#Home"
-            by="Bhupendra Shah"
-            year={2024}
-            className="text-gray-400"
-          />
+
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
           <p className="text-gray-500 text-sm">
-            Full Stack Developer | Odoo Expert | React & Rails
+            © {currentYear} Bhupendra Kumar Sah. All rights reserved.
+          </p>
+          <p className="text-gray-600 text-xs">
+            Built with Next.js, Tailwind CSS, and Flowbite
           </p>
         </div>
       </div>
-    </Footer>
+    </footer>
   );
 }
 
-export default Footerd;
+export default Footer;

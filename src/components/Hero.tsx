@@ -1,107 +1,111 @@
 "use client";
 import React from "react";
 import { Link } from "react-scroll";
-import Image from "next/image";
-import profilePic from "../../public/icons/profile.png";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaArrowRight } from "react-icons/fa";
 
 function Hero() {
   return (
     <section
       id="Home"
-      className="min-h-screen flex items-center justify-center pt-20 pb-16 bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="min-h-screen flex items-center justify-center pt-20 pb-16 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="mb-4">
-              <span className="inline-block px-4 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold">
-                Available for Work
+            <div className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-1.5 rounded-full text-sm font-medium mb-6 animate-fade-in-up">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
+              Available for opportunities
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-              Hi, I'm{" "}
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in-up animation-delay-100">
+              Bhupendra Kumar
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Bhupendra Shah
+                {" "}
+                Sah
               </span>
             </h1>
-            <div className="h-12 mb-6">
-              <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300">
-                <span className="font-semibold">Full Stack Odoo Developer</span>
-                {" | "}
-                <span className="font-semibold">React & Rails Expert</span>
-              </p>
-            </div>
-            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8">
-              Building scalable ERP solutions and modern web applications with 2+ years of experience.
-              Specialized in Odoo 18, React, Ruby on Rails, and creating seamless user experiences.
+
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-4 animate-fade-in-up animation-delay-200">
+              Full Stack Developer & Odoo Specialist
+            </p>
+
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 animate-fade-in-up animation-delay-300">
+              I build scalable web applications and enterprise ERP systems. Specializing in Odoo 18,
+              Ruby on Rails, React, and creating seamless user experiences.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-400">
               <Link
-                to="Portfolio"
+                to="Projects"
                 smooth={true}
                 duration={500}
                 offset={-70}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 cursor-pointer"
               >
-                View My Work
+                View My Work <FaArrowRight size={14} />
               </Link>
               <a
                 href="/Bhupendra-Shah-CV.pdf"
                 download
-                className="px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 flex items-center gap-2"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-all duration-300"
               >
                 <FaDownload /> Download CV
               </a>
             </div>
 
-            {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start mt-8">
-              <a
-                href="https://github.com/bhupendra9211"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-200"
-              >
-                <FaGithub size={22} className="text-gray-800 dark:text-white" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/bhupendra-kumar-sah-038b49217"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-all duration-200"
-              >
-                <FaLinkedin size={22} className="text-blue-700" />
-              </a>
-              <a
-                href="mailto:shahbhupendra9211@gmail.com"
-                className="p-2 bg-gray-200 dark:bg-gray-700 rounded-full hover:bg-red-100 dark:hover:bg-red-900/50 transition-all duration-200"
-              >
-                <FaEnvelope size={22} className="text-red-600" />
-              </a>
+            {/* Stats */}
+            <div className="flex flex-wrap gap-8 justify-center lg:justify-start mt-10 pt-6 border-t border-gray-200 dark:border-gray-700 animate-fade-in-up animation-delay-500">
+              <div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-white">2<span className="text-blue-600">+</span></div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-white">11<span className="text-blue-600">+</span></div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Live Websites</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gray-900 dark:text-white">15<span className="text-blue-600">+</span></div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">Projects Built</div>
+              </div>
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="flex-1 flex justify-center">
+          {/* Right Avatar */}
+          <div className="flex-1 flex justify-center animate-fade-in-up animation-delay-300">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl">
-                <Image
-                  src={profilePic}
-                  alt="Bhupendra Shah"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                <span className="text-7xl font-bold text-white opacity-80">BKS</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes blob {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+      `}</style>
     </section>
   );
 }

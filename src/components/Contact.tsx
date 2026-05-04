@@ -1,129 +1,55 @@
 "use client";
-
-import { useState } from "react";
-import { Button, Drawer, Label, Textarea, TextInput } from "flowbite-react";
-import { HiEnvelope } from "react-icons/hi2";
-import { HiMail, HiPhone } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
-import { useForm } from "react-hook-form";
-import axios from "axios";
-import toast from "react-hot-toast";
-
-interface ContactFormData {
-  email: string;
-  subject: string;
-  message: string;
-}
+import React from "react";
 
 function Contact() {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ContactFormData>();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleClose = () => {
-    setIsOpen(false);
-    reset();
-  };
-
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    try {
-      await axios.post("https://getform.io/f/bqooqjzb", data);
-      toast.success("Message sent successfully!");
-      reset();
-      setTimeout(() => handleClose(), 1500);
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <div>
-      <div
-        onClick={() => setIsOpen(true)}
-        className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer font-medium"
-      >
-        Hire Me
-      </div>
-      <Drawer open={isOpen} onClose={handleClose} position="right">
-        <Drawer.Header title="Get In Touch" titleIcon={HiEnvelope} />
-        <Drawer.Items>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            <div>
-              <Label htmlFor="email" className="mb-2 block font-medium">
-                Email Address
-              </Label>
-              <TextInput
-                {...register("email", { required: "Email is required" })}
-                id="email"
-                placeholder="you@example.com"
-                type="email"
-                className="w-full"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-              )}
-            </div>
-            <div>
-              <Label htmlFor="subject" className="mb-2 block font-medium">
-                Subject
-              </Label>
-              <TextInput
-                {...register("subject", { required: "Subject is required" })}
-                id="subject"
-                placeholder="How can I help you?"
-              />
-              {errors.subject && (
-                <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
-              )}
-            </div>
-            <div>
-              <Label htmlFor="message" className="mb-2 block font-medium">
-                Message
-              </Label>
-              <Textarea
-                {...register("message", { required: "Message is required" })}
-                id="message"
-                placeholder="Tell me about your project..."
-                rows={5}
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
-              )}
-            </div>
-            <Button
-              type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-              disabled={isSubmitting}
+    <section id="Contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-blue-600 dark:text-blue-400 text-sm font-semibold uppercase tracking-wider mb-2">
+            Let's Connect
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Open to <span className="text-gray-500 dark:text-gray-400 italic">New Opportunities</span>
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+            I'm actively looking for full-stack or Odoo developer roles. If you're building something
+            interesting, let's talk.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:shahbhupendra9211@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/25 transition-all"
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </Button>
-            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-2">
-                <HiMail className="w-4 h-4" />
-                <a href="mailto:shahbhupendra9211@gmail.com" className="hover:text-blue-600">
-                  shahbhupendra9211@gmail.com
-                </a>
-              </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
-                <HiPhone className="w-4 h-4" />
-                <a href="tel:9801620807" className="hover:text-blue-600">
-                  9801620807
-                </a>
-              </p>
-            </div>
-          </form>
-        </Drawer.Items>
-      </Drawer>
-    </div>
+              📧 shahbhupendra9211@gmail.com
+            </a>
+            <a
+              href="https://github.com/bhupendra9211"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-700 transition-all"
+            >
+              ⚡ GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bhupendra-kumar-sah-038b49217"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#0077b5] text-white rounded-lg font-medium hover:bg-[#006096] transition-all"
+            >
+              in LinkedIn
+            </a>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
+              📍 Lokanthali, Bhaktapur, Nepal &nbsp;·&nbsp; 📞 9801620807
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
