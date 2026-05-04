@@ -1,99 +1,130 @@
 "use client";
 
-import { Button, Drawer, Label, Textarea, TextInput } from "flowbite-react";
 import { useState } from "react";
+import { Button, Drawer, Label, Textarea, TextInput } from "flowbite-react";
 import { HiEnvelope } from "react-icons/hi2";
+import { HiMail, HiPhone } from "react-icons/hi";
+import { FaGithub, FaLinkedin, FaGlobe } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useForm } from "react-hook-form";
-
 
 interface ContactFormData {
-    email: string;
-    subject: string;
-    message: string;
-  }
-
-
-function Contact() {
-    const {
-        register,
-        handleSubmit,
-    
-        formState: { errors },
-      } = useForm<ContactFormData>();
-
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleClose = () => setIsOpen(false);
-
-    const onSubmit = async (data:ContactFormData) => {
-        handleClose();
-        const userInfo = {
-          email: data.email,
-          subject: data.subject,
-          message: data.message,
-        };
-        try {
-          await axios.post("https://getform.io/f/bqooqjzb", userInfo);
-          toast.success("Your message has been sent");
-        } catch (error) {
-          console.log(error);
-          toast.error("Something went wrong");
-        }
-        
-      };
-    return (
-        <div >
-            <div className="text-base hover:scale-105 duration-200 cursor-pointer dark:text-white" onClick={() => setIsOpen(true)}>
-                Contact 
-            </div>
-            <Drawer open={isOpen} onClose={handleClose}>
-                <Drawer.Header title="CONTACT US" titleIcon={HiEnvelope} />
-                <Drawer.Items>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <div className="mb-6 mt-3">
-                            <Label htmlFor="email" className="mb-2 block">
-                                Your email
-                            </Label>
-                            <TextInput {...register("email", { required: true })} id="email" name="email" placeholder="name@company.com" type="email" />
-                            {errors.email && <span>This field is required</span>}
-                        </div>
-                        <div className="mb-6">
-                            <Label htmlFor="subject" className="mb-2 block">
-                                Subject
-                            </Label>
-                            <TextInput {...register("subject", { required: true })} id="subject" name="subject" placeholder="Let us know how we can help you" />
-                            {errors.subject && <span>This field is required</span>}
-                        </div>
-                        <div className="mb-6">
-                            <Label htmlFor="message" className="mb-2 block">
-                                Your message
-                            </Label>
-                            <Textarea {...register("message", { required: true })} id="message" name="message" placeholder="Your message..." rows={4} />
-                            {errors.message && <span>This field is required</span>}
-                        </div>
-                        <div className="mb-6">
-                            <Button type="submit" className="w-full">
-                                Send message
-                            </Button>
-                        </div>
-                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                            <a href="mailto:info@company.com" className="hover:underline">
-                                bhupendrathedeveloper@gmail.com
-                            </a>
-                        </p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
-                            <a href="tel:2124567890" className="hover:underline">
-                                9801620807
-                            </a>
-                        </p>
-                    </form>
-                </Drawer.Items>
-            </Drawer>
-
-        </div>
-    )
+  email: string;
+  subject: string;
+  message: string;
 }
 
-export default Contact
+function Contact() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    reset();
+  };
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      await axios.post("https://getform.io/f/bqooqjzb", data);
+      toast.success("Message sent successfully!");
+      reset();
+      setTimeout(() => handleClose(), 1500);
+    } catch (error) {
+      console.log(error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <div>
+      <div
+        onClick={() => setIsOpen(true)}
+        className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all duration-300 cursor-pointer font-medium"
+      >
+        Hire Me
+      </div>
+      <Drawer open={isOpen} onClose={handleClose} position="right">
+        <Drawer.Header title="Get In Touch" titleIcon={HiEnvelope} />
+        <Drawer.Items>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <div>
+              <Label htmlFor="email" className="mb-2 block font-medium">
+                Email Address
+              </Label>
+              <TextInput
+                {...register("email", { required: "Email is required" })}
+                id="email"
+                placeholder="you@example.com"
+                type="email"
+                className="w-full"
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+              )}
+            </div>
+            <div>
+              <Label htmlFor="subject" className="mb-2 block font-medium">
+                Subject
+              </Label>
+              <TextInput
+                {...register("subject", { required: "Subject is required" })}
+                id="subject"
+                placeholder="How can I help you?"
+              />
+              {errors.subject && (
+                <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+              )}
+            </div>
+            <div>
+              <Label htmlFor="message" className="mb-2 block font-medium">
+                Message
+              </Label>
+              <Textarea
+                {...register("message", { required: "Message is required" })}
+                id="message"
+                placeholder="Tell me about your project..."
+                rows={5}
+              />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+              )}
+            </div>
+            <Button
+              type="submit"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </Button>
+            <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-2">
+                <HiMail className="w-4 h-4" />
+                <a href="mailto:shahbhupendra9211@gmail.com" className="hover:text-blue-600">
+                  shahbhupendra9211@gmail.com
+                </a>
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-2">
+                <HiPhone className="w-4 h-4" />
+                <a href="tel:9801620807" className="hover:text-blue-600">
+                  9801620807
+                </a>
+              </p>
+            </div>
+          </form>
+        </Drawer.Items>
+      </Drawer>
+    </div>
+  );
+}
+
+export default Contact;

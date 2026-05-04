@@ -1,22 +1,28 @@
+"use client";
+
 import About from "@/components/About";
-import Experiance from "@/components/Skills";
-import Footerd from "@/components/Footerd";
+import Experience from "@/components/Experience";
+import Footer from "@/components/Footerd";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import PortFolio from "@/components/PortFolio";
+import Portfolio from "@/components/PortFolio";
+import Skills from "@/components/Skills";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
     <>
-    <Toaster />
-      <div>
+      <Toaster position="top-right" />
+      <div className="min-h-screen bg-white dark:bg-gray-900">
         <Header />
-        <Hero />
-        <About />
-        <PortFolio />
-        <Experiance />
-        <Footerd />
+        <main>
+          <Hero />
+          <About />
+          <Portfolio />
+          <Skills />
+          <Experience />
+        </main>
+        <Footer />
       </div>
     </>
   );
